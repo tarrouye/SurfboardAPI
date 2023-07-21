@@ -37,7 +37,7 @@ class TildesAPI {
     ) ?? ""
 
     let adjusteduser = decodedLoggedUsername.isEmpty ? nil : decodedLoggedUsername
-    AccountManager.shared.setLoggedInUser(adjusteduser)
+    //AccountManager.shared.setLoggedInUser(adjusteduser)
     DLog("[TildesAPI] " + (decodedLoggedUsername.isEmpty ? "Not logged in" : "Logged in as: \(decodedLoggedUsername)"))
   }
 
@@ -104,7 +104,7 @@ class TildesAPI {
       } else if statusCode != 200 {
         return html.count < 100 ? html : statusCode != nil ? "\(statusCode!)" : "An error occurred"
       } else { // success
-        AccountManager.shared.setLoggedInUser(username)
+        //AccountManager.shared.setLoggedInUser(username)
 
         return nil
       }
@@ -140,7 +140,7 @@ class TildesAPI {
     if statusCode != 200 {
       return html.count < 100 ? html : statusCode != nil ? "\(statusCode!)" : "An error occurred"
     } else { // success
-      AccountManager.shared.setLoggedInUser(stashedUsername)
+      //AccountManager.shared.setLoggedInUser(stashedUsername)
       stashedUsername = nil
 
       return nil
@@ -174,7 +174,7 @@ class TildesAPI {
       if statusCode != 200 && statusCode != 403 {
         return html
       } else { // 200 success / 403 access denied (we aren't logged in anyways)
-        AccountManager.shared.setLoggedInUser(nil)
+        //AccountManager.shared.setLoggedInUser(nil)
         DLog("[TildesAPI] -logout- Success")
         return nil
       }
@@ -185,7 +185,7 @@ class TildesAPI {
 
   // MARK: Notifications
   static func loadNotifications(unread: Bool) async -> [SBNotification] {
-    guard AccountManager.shared.isLoggedIn else { return [] }
+    //guard AccountManager.shared.isLoggedIn else { return [] }
     do {
       let referrer = baseURL
       var url = URL(string: baseURL)!
