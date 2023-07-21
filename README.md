@@ -5,7 +5,7 @@ A Swift implementation of a basic API for Tildes.net
 
 **This is an incomplete and imperfect implementation.** 
 As long as this message is still here, no support is guaranteed, and breaking changes may happen at any point. 
-**Documentation is incomplete.** 
+**Documentation is incomplete.** Some parts may be broken or incomplete because this was ripped from a larger project and has not been properly modularized yet. 
 
 ## Implementation
 
